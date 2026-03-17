@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg1: #07070f;
+  --bg2: #0e0e1a;
+  --bg3: #13131f;
+  --bg4: #1a1a28;
+  --bg5: #1f1f30;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg1);
+  color: #f0f0f8;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: #3a3a55; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #6c5ce7; }
+
+/* Page transition */
+.animate-fade-up {
+  animation: fadeUp 0.28s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Recharts global overrides */
+.recharts-default-tooltip {
+  background: #1a1a28 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  color: #f0f0f8 !important;
+}
+
+/* Overflow guards */
+img, svg, canvas { max-width: 100%; }
+
+@media (max-width: 640px) {
+  table { font-size: 12px; }
+}
